@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import {
+  Code, Database, Server, Layers, Globe, Smartphone,
+  GitBranch, Cloud, Cpu
+} from "lucide-react";
 import { Button } from "../components/button.js";
-
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
-
 
   useEffect(() => {
     setMounted(true);
@@ -14,79 +15,97 @@ export default function Hero() {
 
   if (!mounted) return null;
 
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-  };
+  // Tech Icons (keep it minimal + professional)
+  const techIcons = [
+    { Icon: Code, x: "10%", y: "15%", delay: 0.2 },
+    { Icon: Database, x: "85%", y: "20%", delay: 0.4 },
+    { Icon: Server, x: "15%", y: "75%", delay: 0.6 },
+    { Icon: Layers, x: "80%", y: "70%", delay: 0.8 },
+    { Icon: Globe, x: "20%", y: "45%", delay: 1.0 },
+    { Icon: Smartphone, x: "75%", y: "45%", delay: 1.2 },
+    { Icon: GitBranch, x: "12%", y: "60%", delay: 1.4 },
+    { Icon: Cloud, x: "88%", y: "35%", delay: 1.6 },
+    { Icon: Cpu, x: "50%", y: "85%", delay: 1.8 }
+  ];
 
   return (
-    <section className="relative h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-background to-background"></div>
+    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-transparent text-center">
+
+      {/* Animated Tech Icons */}
+      <div className="absolute inset-0 -z-10">
+        {techIcons.map(({ Icon, x, y, delay }, index) => (
+          <motion.div
+            key={index}
+            className="absolute opacity-10 dark:opacity-20"
+            style={{ left: x, top: y }}
+            initial={{ opacity: 0, scale: 0, rotate: -180 }}
+            animate={{
+              opacity: [0.05, 0.15, 0.05],
+              scale: [0.8, 1.2, 0.8],
+              rotate: [0, 360, 0]
+            }}
+            transition={{
+              duration: 8,
+              delay: delay,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut"
+            }}
+          >
+            <Icon className="w-12 h-12 md:w-16 md:h-16 text-foreground" />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center max-w-3xl mx-auto"
+        className="max-w-3xl mx-auto relative z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          <span className="text-primary">Hello There</span> I&apos;m Bhavin Pathak
+          👋 Hi, I&apos;m <span className="text-primary">Bhaviin</span>
         </h1>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          <span className="text-primary">Full-Stack</span> Developer
-        </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-8">
-          Building robust web applications from front to back
+        <h2 className="text-2xl md:text-4xl font-semibold mb-4">
+          Software Developer | Backend & Mobile
+        </h2>
+        <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
+          Turning ideas into production-ready applications.
         </p>
+
+        {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* About Me Button */}
           <Button
             size="lg"
             onClick={() =>
-              document
-                .getElementById("projects")
-                ?.scrollIntoView({ behavior: "smooth" })
+              document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            View Projects
+            About Me
           </Button>
+
+          {/* Contact Button */}
           <Button
             size="lg"
             variant="outline"
             onClick={() =>
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({ behavior: "smooth" })
+              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
             }
           >
             Contact Me
           </Button>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              Download CV
-            </Button>
-          </div>
+
+          {/* Resume Button (assets folder se open hoga) */}
+          <Button
+            size="lg"
+            variant="outline"
+            onClick={() => window.open("/assets/BHAVIN_PATHAK_CV.pdf", "_blank")}
+          >
+            Download CV
+          </Button>
         </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-8"
-      >
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={scrollToAbout}
-          className="animate-bounce"
-        >
-          <ArrowDown className="h-6 w-6" />
-        </Button>
       </motion.div>
     </section>
   );

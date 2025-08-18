@@ -3,18 +3,25 @@ module.exports = {
   darkMode: "class",
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
+    "./app/**/*.{js,jsx,ts,tsx}",
     "./components/**/*.{js,jsx,ts,tsx}",
     "./pages/**/*.{js,jsx,ts,tsx}",
+    "./theme/**/*.{js,jsx,ts,tsx}",
+    "./utils/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: "#4f46e5",
+        primary: "#2563EB",
         "primary-dark": "#6366f1",
-        background: "#f9fafb",
-        "background-dark": "#111827",
-        "muted-foreground": "#6b7280",
-        "muted-foreground-dark": "#9ca3af",
+        background: {
+          DEFAULT: "#f9fafb",
+          dark: "#000000",
+        },
+        "muted-foreground": {
+          DEFAULT: "#6b7280",
+          dark: "#9ca3af",
+        },
       },
     },
   },

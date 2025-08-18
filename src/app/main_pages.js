@@ -4,20 +4,32 @@ import Skills from "../pages/skills.js";
 import Projects from "../pages/projects.js";
 import Experience from "../pages/experience.js";
 import Contact from "../pages/contact.js";
-import ThemeToggle from "../theme/theme-toggle.js";
+import Header from "../components/header.js";
+import Footer from "../components/footer.js";
 
 export default function Main_Pages() {
     return (
-        <main className="min-h-screen bg-background dark:bg-background-dark">
-            <div className="fixed top-4 right-4 z-50">
-                <ThemeToggle />
-            </div>
-            <Hero />
-            <About />
-            <Skills />
-            <Projects />
-            <Experience />
-            <Contact />
-        </main>
+        <div className="min-h-screen">
+            <Header />
+            <section id="home" className="py-12">
+                <Hero />
+            </section>
+            <section id="about" className="py-12">
+                <About />
+            </section>
+            <section id="skills" className="py-12">
+                <Skills />
+            </section>
+            <section id="projects" className="py-12">
+                <Projects />
+            </section>
+            <section id="experience" className="py-12">
+                <Experience />
+            </section>
+            <section id="contact" className="py-12">
+                <Contact />
+            </section>
+            <Footer />
+        </div>
     );
 }

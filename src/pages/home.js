@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
-  Code, Database, Server, Layers, Globe, Smartphone,
-  GitBranch, Cloud, Cpu
+  Code,
+  Database,
+  Server,
+  Layers,
+  Globe,
+  Smartphone,
+  GitBranch,
+  Cloud,
+  Cpu,
 } from "lucide-react";
 import { Button } from "../components/button.js";
 
@@ -25,12 +32,11 @@ export default function Hero() {
     { Icon: Smartphone, x: "75%", y: "45%", delay: 1.2 },
     { Icon: GitBranch, x: "12%", y: "60%", delay: 1.4 },
     { Icon: Cloud, x: "88%", y: "35%", delay: 1.6 },
-    { Icon: Cpu, x: "50%", y: "85%", delay: 1.8 }
+    { Icon: Cpu, x: "50%", y: "85%", delay: 1.8 },
   ];
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden bg-transparent text-center">
-
       {/* Animated Tech Icons */}
       <div className="absolute inset-0 -z-10">
         {techIcons.map(({ Icon, x, y, delay }, index) => (
@@ -42,14 +48,14 @@ export default function Hero() {
             animate={{
               opacity: [0.05, 0.15, 0.05],
               scale: [0.8, 1.2, 0.8],
-              rotate: [0, 360, 0]
+              rotate: [0, 360, 0],
             }}
             transition={{
               duration: 8,
               delay: delay,
               repeat: Infinity,
               repeatType: "reverse",
-              ease: "easeInOut"
+              ease: "easeInOut",
             }}
           >
             <Icon className="w-12 h-12 md:w-16 md:h-16 text-foreground" />
@@ -65,7 +71,15 @@ export default function Hero() {
         className="max-w-3xl mx-auto relative z-10"
       >
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          👋 Hi, I&apos;m <span className="text-primary">Bhaviin</span>
+          👋 Hi, I&apos;m{" "}
+          <motion.span
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative inline-block bg-gradient-to-r from-primary via-purple-500 to-orange-500 bg-clip-text text-transparent animate-gradient"
+          >
+            Bhaviin
+          </motion.span>
         </h1>
         <h2 className="text-2xl md:text-4xl font-semibold mb-4">
           Software Developer | Backend & Mobile
@@ -80,7 +94,9 @@ export default function Hero() {
           <Button
             size="lg"
             onClick={() =>
-              document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+              document
+                .getElementById("about")
+                ?.scrollIntoView({ behavior: "smooth" })
             }
           >
             About Me
@@ -91,7 +107,9 @@ export default function Hero() {
             size="lg"
             variant="outline"
             onClick={() =>
-              document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
             }
           >
             Contact Me
@@ -101,7 +119,9 @@ export default function Hero() {
           <Button
             size="lg"
             variant="outline"
-            onClick={() => window.open("/assets/BHAVIN_PATHAK_CV.pdf", "_blank")}
+            onClick={() =>
+              window.open("/assets/BHAVIN_PATHAK_CV.pdf", "_blank")
+            }
           >
             Download CV
           </Button>

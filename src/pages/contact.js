@@ -5,7 +5,7 @@ import { Input } from "../components/input.js"
 import { Textarea } from "../components/textarea.js"
 import { Button } from "../components/button.js"
 import { Label } from "../components/label.js"
-import { Github, Linkedin, Mail, MessageSquare } from "lucide-react"
+import { Github, Linkedin, Mail, MessageSquare, PhoneCall } from "lucide-react"
 import { useToast } from "../hooks/use-toast.js"
 
 export default function Contact() {
@@ -63,7 +63,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <Card>
-              <CardContent className="p-6">
+              <CardContent className="p-4">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
@@ -121,32 +121,30 @@ export default function Contact() {
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-full bg-primary/10 text-primary">
-                      <Mail className="h-6 w-6" />
+                      <PhoneCall className="h-6 w-6" />
                     </div>
                     <div>
-                      <h4 className="font-medium">Email</h4>
+                      <h4 className="font-medium">Phone</h4>
                       <a
-                        href="mailto:contact@example.com"
+                        href="tel:+91942845515"
                         className="text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        contact@example.com
+                        +91 9428455515
                       </a>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-full bg-primary/10 text-primary">
-                      <Github className="h-6 w-6" />
+                      <Mail className="h-6 w-6" />
                     </div>
                     <div>
-                      <h4 className="font-medium">GitHub</h4>
+                      <h4 className="font-medium">Email</h4>
                       <a
-                        href="https://github.com/username"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="mailto:bhavinpathak29@gmail.com"
                         className="text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        github.com/username
+                        bhavinpathak29@gmail.com
                       </a>
                     </div>
                   </div>
@@ -158,16 +156,32 @@ export default function Contact() {
                     <div>
                       <h4 className="font-medium">LinkedIn</h4>
                       <a
-                        href="https://linkedin.com/in/username"
+                        href="https://www.linkedin.com/in/bhavin-pathak/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        linkedin.com/in/username
+                        linkedin.com/in/bhavin-pathak
                       </a>
                     </div>
                   </div>
 
+                  <div className="flex items-center gap-4">
+                    <div className="p-3 rounded-full bg-primary/10 text-primary">
+                      <Github className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium">GitHub</h4>
+                      <a
+                        href="https://github.com/Bhavin-Pathak"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        github.com/Bhavin-Pathak
+                      </a>
+                    </div>
+                  </div>
                   <div className="flex items-center gap-4">
                     <div className="p-3 rounded-full bg-primary/10 text-primary">
                       <MessageSquare className="h-6 w-6" />

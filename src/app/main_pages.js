@@ -5,7 +5,6 @@ import Projects from "../pages/projects.js";
 import Experience from "../pages/experience.js";
 import Contact from "../pages/contact.js";
 import Header from "../components/header.js";
-import Footer from "../components/footer.js";
 
 export default function Main_Pages() {
   return (
@@ -29,7 +28,6 @@ export default function Main_Pages() {
       <section id="contact" className="py-12">
         <Contact />
       </section>
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Code, Database, Server, Layers, Globe, Smartphone, GitBranch, Cloud, Cpu, } from "lucide-react";
+import { Code, Database, Server, Layers, Globe, Smartphone, GitBranch, Cloud, Cpu } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../components/card.js";
 import { Tabs, TabsList, TabsTrigger } from "../components/tabs.js";
 import { Button } from "../components/button.js";
@@ -142,7 +142,7 @@ export default function Projects() {
     }, 1000);
   }, []);
 
-  // Tech Icons for background (same as in Hero)
+  // Tech Icons for background
   const techIcons = [
     { Icon: Code, x: "10%", y: "15%", delay: 0.2 },
     { Icon: Database, x: "85%", y: "20%", delay: 0.4 },
@@ -159,15 +159,11 @@ export default function Projects() {
     activeTab === "all"
       ? repos
       : repos.filter((repo) => {
-        // Normalize both the tab value and topics for comparison
         const normalizedTab = activeTab.toLowerCase();
-
-        // Check if any topic matches the tab (case-insensitive)
         return (
           repo.topics.some((topic) =>
             topic.toLowerCase().includes(normalizedTab)
           ) ||
-          // Also check if the language matches (case-insensitive)
           repo.language.toLowerCase().includes(normalizedTab)
         );
       });
@@ -226,11 +222,7 @@ export default function Projects() {
           </div>
         ) : (
           <>
-            <Tabs
-              defaultValue="all"
-              className="mb-8"
-              onValueChange={setActiveTab}
-            >
+            <Tabs value={activeTab} onValueChange={setActiveTab} className="mb-8">
               <div className="flex justify-center">
                 <TabsList>
                   <TabsTrigger value="all">All</TabsTrigger>
@@ -241,7 +233,7 @@ export default function Projects() {
               </div>
             </Tabs>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredRepos.length > 0 ? (
                 filteredRepos.map((repo, index) => (
                   <motion.div

@@ -1,12 +1,21 @@
 {
-  "name": "bhavin_web",
-  "version": "0.1.0",
+  "name": "portfolio_bhavin",
+  "version": "0.1",
   "private": true,
   "homepage": "https://bhavin-pathak.github.io",
   "dependencies": {
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
+    "lucide-react": "^0.539.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.8.1",
     "react-scripts": "5.0.1",
+    "react-scroll": "^1.9.3",
+    "tailwind-merge": "^3.3.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -15,11 +24,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app"
-    ]
   },
   "browserslist": {
     "production": [
@@ -34,6 +38,38 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.57.1",
+    "gh-pages": "^6.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  },
+  "author": {
+    "name": "Bhavin Pathak",
+    "email": "bhavinpathak29@gmail.com",
+    "contact": "+91 9428455515",
+    "github": "Bhavin-Pathak",
+    "linkedin": "bhavin-pathak"
+  },
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "bhavin pathak",
+    "bhavin web",
+    "bhavin portfolio",
+    "bhavin pathak portfolio",
+    "bhavin pathak web",
+    "bhavin pathak website",
+    "bhavin pathak personal website",
+    "bhavin pathak portfolio website",
+    "bhavin pathak personal portfolio"
+  ],
+  "description": "This is my personal portfolio website built with React, showcasing my skills, projects, and experience. It is designed to be responsive and user-friendly, providing a comprehensive overview of my professional journey.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bhavin-Pathak/bhavin-pathak.github.io.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bhavin-Pathak/bhavin-pathak.github.io/issues"
   }
 }

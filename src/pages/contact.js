@@ -7,6 +7,7 @@ import { Button } from "../components/button.js"
 import { Label } from "../components/label.js"
 import { Github, Linkedin, Mail, MessageSquare, PhoneCall } from "lucide-react"
 import { useToast } from "../hooks/use-toast.js"
+import Footer from "../components/footer.js"
 
 export default function Contact() {
   const { toast } = useToast()
@@ -197,6 +198,7 @@ export default function Contact() {
           </motion.div>
         </div>
       </div>
+      <Footer />
     </section>
   )
 }

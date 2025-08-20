@@ -32,19 +32,15 @@ const TabsTrigger = React.forwardRef(({ className, ...props }, ref) => (
       "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
       "focus-visible:ring-offset-2 focus-visible:ring-offset-background",
       "disabled:pointer-events-none disabled:opacity-50",
-
-      // Inactive look
-      "text-foreground/70 hover:bg-white/30 dark:hover:bg-white/10",
-
-      // ✅ Active Tab with Primary Color
-      "data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-md",
-
+      "data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:shadow-md",
+      "data-[state=active]:hover:bg-primary data-[state=active]:hover:text-white",
       className
     )}
     {...props}
   />
 ))
 TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+
 
 // Tab Content => also glass background
 const TabsContent = React.forwardRef(({ className, ...props }, ref) => (

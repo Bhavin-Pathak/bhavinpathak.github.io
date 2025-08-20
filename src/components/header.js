@@ -1,10 +1,11 @@
-import { useState } from "react";
-import { Link } from "react-scroll";
+import { useState, useEffect } from "react";
+import { Link, scroller } from "react-scroll"; // ✅ scroller import
 import { Menu, X } from "lucide-react";
 import ThemeToggle from "./theme-toggle.js";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState("home"); // ✅ default active tab = home
 
   const navItems = [
     "home",
@@ -14,6 +15,15 @@ export default function Header() {
     "experience",
     "contact",
   ];
+
+  // ✅ Page load hote hi home par scroll kare
+  useEffect(() => {
+    scroller.scrollTo("home", {
+      duration: 0,
+      smooth: true,
+      offset: -70,
+    });
+  }, []);
 
   return (
     <>
@@ -36,13 +46,16 @@ export default function Header() {
                 duration={500}
                 offset={-70}
                 spy={true}
-                activeClass="text-[#2563EB] dark:text-[#2563EB] font-bold"
-                className="cursor-pointer transition-colors duration-300 text-gray-700 dark:text-gray-300"
+                onSetActive={() => setActiveTab(section)} // ✅ update active tab
+                className={`cursor-pointer transition-colors duration-300 
+                  ${activeTab === section
+                    ? "text-[#2563EB] font-bold dark:text-[#2563EB]"
+                    : "text-gray-700 dark:text-gray-300"
+                  }`}
               >
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </Link>
             ))}
-            {/* Theme toggle only for desktop */}
             <ThemeToggle />
           </nav>
         </div>
@@ -80,7 +93,6 @@ export default function Header() {
               <X className="h-6 w-6" />
             </button>
 
-            {/* Nav only (no theme toggle here) */}
             <nav className="flex flex-col space-y-5 mt-4 items-center text-center w-full">
               {navItems.map((section) => (
                 <Link
@@ -90,9 +102,13 @@ export default function Header() {
                   duration={500}
                   offset={-70}
                   spy={true}
+                  onSetActive={() => setActiveTab(section)}
                   onClick={() => setMenuOpen(false)}
-                  activeClass="text-[#2563EB] dark:text-[#2563EB] font-bold"
-                  className="block px-6 py-1 cursor-pointer transition-colors duration-300 text-gray-700 dark:text-gray-300 text-base"
+                  className={`block px-6 py-1 cursor-pointer transition-colors duration-300 text-base
+                    ${activeTab === section
+                      ? "text-[#2563EB] font-bold dark:text-[#2563EB]"
+                      : "text-gray-700 dark:text-gray-300"
+                    }`}
                 >
                   {section.charAt(0).toUpperCase() + section.slice(1)}
                 </Link>

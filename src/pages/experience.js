@@ -83,7 +83,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="relative py-20 px-4 md:px-6 lg:px-8 bg-muted/50 scroll-mt-16 overflow-hidden"
+      className="relative pt-1 pb-10 px-4 md:px-6 lg:px-8 scroll-mt-16 overflow-hidden"
     >
       {/* Animated Tech Icons Background (Hero style) */}
       <div className="absolute inset-0 -z-10">

@@ -5,7 +5,7 @@ import { Input } from "../components/input.js"
 import { Textarea } from "../components/textarea.js"
 import { Button } from "../components/button.js"
 import { Label } from "../components/label.js"
-import { Github, Linkedin, Mail, MessageSquare, PhoneCall, Code, Database, Server, Layers, Globe, Smartphone, GitBranch, Cloud, Cpu } from "lucide-react"
+import { Github, Linkedin, Mail, MessageSquare, PhoneCall, Code, Database, Server, Layers, Globe, Smartphone, GitBranch, Cloud } from "lucide-react"
 import { useToast } from "../hooks/use-toast.js"
 import Footer from "../components/footer.js"
 
@@ -27,8 +27,7 @@ export default function Contact() {
     { Icon: Globe, x: "20%", y: "45%", delay: 1.0 },
     { Icon: Smartphone, x: "75%", y: "45%", delay: 1.2 },
     { Icon: GitBranch, x: "12%", y: "60%", delay: 1.4 },
-    { Icon: Cloud, x: "88%", y: "35%", delay: 1.6 },
-    { Icon: Cpu, x: "50%", y: "85%", delay: 1.8 },
+    { Icon: Cloud, x: "88%", y: "35%", delay: 1.6 }
   ]
 
   const handleChange = (e) => {
@@ -52,7 +51,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative py-20 px-4 md:px-6 lg:px-8 scroll-mt-16 overflow-hidden">
+    <section id="contact" className="relative pt-1 pb-10 px-4 md:px-6 lg:px-8 scroll-mt-16 overflow-hidden">
       {/* Animated Tech Icons Background */}
       <div className="absolute inset-0 -z-10">
         {techIcons.map(({ Icon, x, y, delay }, index) => (

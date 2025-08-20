@@ -1,16 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Code,
-  Database,
-  Server,
-  Layers,
-  Globe,
-  Smartphone,
-  GitBranch,
-  Cloud,
-  Cpu,
-} from "lucide-react";
+import { Code, Database, Server, Layers, Globe, Smartphone, GitBranch, Cloud, Cpu } from "lucide-react";
 import { Button } from "../components/button.js";
 
 export default function Hero() {
@@ -22,7 +12,7 @@ export default function Hero() {
 
   if (!mounted) return null;
 
-  // Tech Icons (keep it minimal + professional)
+  // Tech Icons
   const techIcons = [
     { Icon: Code, x: "10%", y: "15%", delay: 0.2 },
     { Icon: Database, x: "85%", y: "20%", delay: 0.4 },
@@ -62,7 +52,6 @@ export default function Hero() {
           </motion.div>
         ))}
       </div>
-
       {/* Hero Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -87,7 +76,6 @@ export default function Hero() {
         <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed">
           Turning ideas into production-ready applications.
         </p>
-
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           {/* About Me Button */}
@@ -101,7 +89,6 @@ export default function Hero() {
           >
             About Me
           </Button>
-
           {/* Contact Button */}
           <Button
             size="lg"
@@ -114,13 +101,12 @@ export default function Hero() {
           >
             Contact Me
           </Button>
-
           {/* Resume Button (assets folder se open hoga) */}
           <Button
             size="lg"
             variant="outline"
             onClick={() =>
-              window.open("/assets/BHAVIN_PATHAK_CV.pdf", "_blank")
+              window.open("/assets/Bhaviin-Pathak.pdf", "_blank")
             }
           >
             Download CV

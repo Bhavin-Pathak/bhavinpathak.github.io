@@ -42,12 +42,13 @@ export default function Header() {
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </Link>
             ))}
+            {/* Theme toggle only for desktop */}
             <ThemeToggle />
           </nav>
         </div>
       </header>
 
-      {/* Mobile: Only Floating Menu Button */}
+      {/* Mobile: Floating Menu Button */}
       <button
         className="fixed top-4 right-4 block md:hidden z-50 p-2 rounded-xl bg-white/90 dark:bg-gray-800/90 shadow-lg"
         onClick={() => setMenuOpen(true)}
@@ -56,20 +57,20 @@ export default function Header() {
         <Menu className="h-6 w-6 text-gray-800 dark:text-gray-200" />
       </button>
 
-      {/* Mobile: Content-sized Glass Drawer Sidebar */}
+      {/* Mobile: Glass Drawer Sidebar */}
       {menuOpen && (
         <>
-          {/* Overlay (transparent, no glass) */}
+          {/* Overlay */}
           <div
             className="fixed inset-0 z-40"
             onClick={() => setMenuOpen(false)}
           ></div>
 
-          {/* Mini glass drawer/card */}
+          {/* Drawer */}
           <aside
             className="fixed top-6 right-4 z-50 w-52 rounded-2xl bg-white/30 dark:bg-gray-900/40
-    backdrop-blur-xl shadow-2xl border border-white/30
-    flex flex-col items-end overflow-hidden animate-fade-in"
+              backdrop-blur-xl shadow-2xl border border-white/30
+              flex flex-col items-end overflow-hidden animate-fade-in"
           >
             <button
               className="p-2 text-gray-800 dark:text-gray-200"
@@ -78,7 +79,8 @@ export default function Header() {
             >
               <X className="h-6 w-6" />
             </button>
-            {/* Nav Centered! */}
+
+            {/* Nav only (no theme toggle here) */}
             <nav className="flex flex-col space-y-5 mt-4 items-center text-center w-full">
               {navItems.map((section) => (
                 <Link

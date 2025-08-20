@@ -5,48 +5,67 @@ import { Badge } from "../components/badge.js"
 export default function Experience() {
   const experiences = [
     {
-      company: "TechInnovate Solutions",
-      position: "Senior Full-Stack Developer",
-      period: "Jan 2022 - Present",
-      description: "Leading development of enterprise SaaS platforms for financial services clients.",
-      technologies: ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "AWS"],
+      company: "Meril",
+      position: "Software Developer SDE-1",
+      period: "Dec 2024 - Present",
+      description:
+        "Worked cross-functionally with AI & product teams to design and ship smart software systems.",
+      technologies: ["Node.js", "React.js", "AI/LLMs", "Express.js", "PostgreSQL"],
       responsibilities: [
-        "Architected and implemented scalable microservices architecture",
-        "Led a team of 5 developers using Agile methodologies",
-        "Optimized application performance, reducing load times by 40%",
-        "Implemented CI/CD pipelines with GitHub Actions and AWS",
-        "Collaborated with UX designers to create intuitive user interfaces",
+        "Collaborated with AI and product teams to deliver intelligent software systems",
+        "Developed secure and scalable backend services",
+        "Built interactive and dynamic UIs using React.js",
+        "Integrated AI/LLMs into real-world applications",
+        "Automated workflows to improve software intelligence",
       ],
     },
     {
-      company: "DataFlow Systems",
-      position: "Full-Stack Developer",
-      period: "Mar 2020 - Dec 2021",
-      description: "Developed data visualization and analytics platforms for business intelligence.",
-      technologies: ["React", "Express.js", "MongoDB", "D3.js", "GraphQL", "Docker"],
+      company: "UB Softec",
+      position: "Mobile Application Developer",
+      period: "Apr 2024 - Oct 2024",
+      description:
+        "Worked as a collaborative junior developer, contributing to mobile app and backend development.",
+      technologies: ["Flutter", "Node.js", "Firebase", "MongoDB"],
       responsibilities: [
-        "Built responsive dashboards with real-time data visualization",
-        "Developed RESTful and GraphQL APIs for data retrieval and manipulation",
-        "Implemented authentication and authorization systems",
-        "Optimized database queries for large datasets",
-        "Participated in code reviews and mentored junior developers",
+        "Contributed to mobile app development projects with Flutter",
+        "Assisted in backend development and API integrations",
+        "Collaborated with senior developers to implement features",
+        "Fixed bugs and optimized app performance",
+        "Gained hands-on experience in agile teamwork",
       ],
     },
     {
-      company: "WebSphere Innovations",
-      position: "Frontend Developer",
-      period: "Jun 2018 - Feb 2020",
-      description: "Created interactive web applications for e-commerce and media clients.",
-      technologies: ["React", "Redux", "JavaScript", "SASS", "Webpack", "Jest"],
+      company: "RnD Technosoft",
+      position: "iOS App Developer",
+      period: "Jun 2022 - Mar 2024",
+      description:
+        "Developed and published iOS applications on the App Store and Android applications on Play Store.",
+      technologies: ["Swift", "iOS SDK", "Xcode", "App Store Connect", "Play Console"],
       responsibilities: [
-        "Developed responsive and accessible user interfaces",
-        "Implemented state management with Redux and Context API",
-        "Created reusable component libraries",
-        "Wrote unit and integration tests with Jest and React Testing Library",
-        "Collaborated with backend developers to integrate APIs",
+        "Developed and maintained multiple iOS apps",
+        "Handled app submissions and compliance with App Store and Play Store policies",
+        "Collaborated with design and backend teams for feature implementation",
+        "Debugged and optimized app performance for smooth user experience",
+        "Ensured adherence to Apple and Google publishing guidelines",
       ],
     },
-  ]
+    {
+      company: "Earth Infotech",
+      position: "Computer Technical Specialist",
+      period: "Apr 2020 - May 2022",
+      description:
+        "Provided computer hardware and technical support services, specializing in custom systems and OS installations.",
+      technologies: ["Windows", "Linux", "Hardware Troubleshooting", "Networking"],
+      responsibilities: [
+        "Built and configured custom computer systems for clients",
+        "Installed and upgraded operating systems and software",
+        "Performed hardware diagnostics and troubleshooting",
+        "Provided IT support for local clients and businesses",
+        "Ensured smooth deployment of updated systems",
+      ],
+    },
+  ];
+
 
   return (
     <section id="experience" className="py-20 px-4 md:px-6 lg:px-8 bg-muted/50 scroll-mt-16">
@@ -60,11 +79,10 @@ export default function Experience() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Work Experience</h2>
           <div className="h-1 w-20 bg-primary mx-auto"></div>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional journey building real-world applications
+          <p className="mt-4 text-lg text-muted-foreground max-w-1xl mx-auto">
+            Self-taught developer passionate about building scalable and intelligent software solutions.
           </p>
         </motion.div>
-
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <motion.div

@@ -1,8 +1,22 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "../components/card.js"
 import { Badge } from "../components/badge.js"
+import { Code, Database, Server, Layers, Globe, Smartphone, GitBranch, Cloud, Cpu } from "lucide-react"
 
 export default function Experience() {
+  // Tech Icons for background (Hero style)
+  const techIcons = [
+    { Icon: Code, x: "10%", y: "15%", delay: 0.2 },
+    { Icon: Database, x: "85%", y: "20%", delay: 0.4 },
+    { Icon: Server, x: "15%", y: "75%", delay: 0.6 },
+    { Icon: Layers, x: "80%", y: "70%", delay: 0.8 },
+    { Icon: Globe, x: "20%", y: "45%", delay: 1.0 },
+    { Icon: Smartphone, x: "75%", y: "45%", delay: 1.2 },
+    { Icon: GitBranch, x: "12%", y: "60%", delay: 1.4 },
+    { Icon: Cloud, x: "88%", y: "35%", delay: 1.6 },
+    { Icon: Cpu, x: "50%", y: "85%", delay: 1.8 },
+  ]
+
   const experiences = [
     {
       company: "Meril",
@@ -64,11 +78,39 @@ export default function Experience() {
         "Ensured smooth deployment of updated systems",
       ],
     },
-  ];
-
+  ]
 
   return (
-    <section id="experience" className="py-20 px-4 md:px-6 lg:px-8 bg-muted/50 scroll-mt-16">
+    <section
+      id="experience"
+      className="relative py-20 px-4 md:px-6 lg:px-8 bg-muted/50 scroll-mt-16 overflow-hidden"
+    >
+      {/* Animated Tech Icons Background (Hero style) */}
+      <div className="absolute inset-0 -z-10">
+        {techIcons.map(({ Icon, x, y, delay }, index) => (
+          <motion.div
+            key={index}
+            className="absolute opacity-10 dark:opacity-20"
+            style={{ left: x, top: y }}
+            initial={{ opacity: 0, scale: 0, rotate: -180 }}
+            animate={{
+              opacity: [0.05, 0.15, 0.05],
+              scale: [0.8, 1.2, 0.8],
+              rotate: [0, 360, 0],
+            }}
+            transition={{
+              duration: 8,
+              delay: delay,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "easeInOut",
+            }}
+          >
+            <Icon className="w-12 h-12 md:w-16 md:h-16 text-foreground" />
+          </motion.div>
+        ))}
+      </div>
+
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,6 +125,7 @@ export default function Experience() {
             Self-taught developer passionate about building scalable and intelligent software solutions.
           </p>
         </motion.div>
+
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <motion.div
